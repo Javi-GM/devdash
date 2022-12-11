@@ -1,13 +1,24 @@
+import { useEffect, useState } from 'react'
 import styled from 'styled-components'
 import { RepositoryCard } from '../../components/RepositoryCard/RepositoryCard';
-import { InMemoryGithubRepositoryRepository } from '../../infraestructure/InMemoryGithubRepositoryRepository';
+import { devDashConfig } from '../../devdash.config';
+import { GithubApiGithubRepositoryRepository } from '../../infraestructure/GithubApiGithubRepositoryRepository';
+import { GithubApiResponse } from '../../infraestructure/interfaces';
 
 const title = 'DevDash_'
 
-const gitHubApiResponses = new InMemoryGithubRepositoryRepository().search();
-
+const repository = new GithubApiGithubRepositoryRepository(
+    devDashConfig.github_access_token
+)
 
 export function Dashboard() {
+    const [githubApiResponses, setGithubApiResponses] = useState<GithubApiResponse[]>([])
+
+    useEffect(() => {
+        repository.search(devDashConfig.repositories.map((r) => r.url))
+            .then(data => setGithubApiResponses(data))
+    }, [])
+
     return (
         <>
             <header>
@@ -16,7 +27,7 @@ export function Dashboard() {
             <div style={{ height: 32 }}></div>
             <section>
                 {
-                    gitHubApiResponses.map((r) => (
+                    githubApiResponses.map((r) => (
                         <RepositoryCard githubApiResponse={r} />
                     ))
                 }

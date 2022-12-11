@@ -1,6 +1,6 @@
-import { RootObject } from "../infraestructure/interfaces";
+import { GithubApiResponse } from "../infraestructure/interfaces";
 
-const styledComponentsGithubApiResponse: RootObject = {
+const styledComponentsGithubApiResponse: GithubApiResponse = {
     repositoryData: {
         "id": 65794292,
         "node_id": "MDEwOlJlcG9zaXRvcnk2NTc5NDI5Mg==",
@@ -141,7 +141,7 @@ const styledComponentsGithubApiResponse: RootObject = {
         "network_count": 2373,
         "subscribers_count": 369
     },
-    pullRequest: [
+    pullRequests: [
         {
             "url": "https://api.github.com/repos/styled-components/styled-components/pulls/3477",
             "id": 626559164,

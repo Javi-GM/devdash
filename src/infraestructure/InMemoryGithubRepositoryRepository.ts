@@ -1,8 +1,8 @@
 import { gitHubApiResponses } from "../data/githubApiResponses";
-import { RootObject } from "./interfaces";
+import { GithubApiResponse } from "./interfaces";
 
 class InMemoryGithubRepositoryRepository {
-    search(): RootObject[] {
+    search(): GithubApiResponse[] {
         return gitHubApiResponses;
     }
 }

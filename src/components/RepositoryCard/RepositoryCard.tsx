@@ -1,8 +1,8 @@
 import styled from "styled-components";
-import { RootObject } from "../../infraestructure/interfaces";
+import { GithubApiResponse } from "../../infraestructure/interfaces";
 
 interface Props {
-    githubApiResponse: RootObject;
+    githubApiResponse: GithubApiResponse;
 }
 
 function RepositoryCard({ githubApiResponse }: Props) {

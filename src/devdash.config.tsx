@@ -11,15 +11,7 @@ export const devDashConfig: DevDashConfig = {
     repositories: [
         {
             id: '32ed57d0- b552 - 4f86 - b306 - 4abc3f246cf5',
-            url: 'https://www.github.com/Javi-GM/character-creator',
+            url: 'https://www.github.com/styled-components/styled-components',
         },
-        {
-            id: '33ed57d0- b552 - 4f86 - b306 - 4abc3f246cf5',
-            url: 'https://www.github.com/Javi-GM/huckleberry',
-        },
-        {
-            id: '35ed57d0- b552 - 4f86 - b306 - 4abc3f246cf5',
-            url: 'https://www.github.com/Javi-GM/notes',
-        }
     ]
 }

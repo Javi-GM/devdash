@@ -1,6 +1,6 @@
-export interface RootObject {
+export interface GithubApiResponse {
     repositoryData: RepositoryData;
-    pullRequest: PullRequest[];
+    pullRequests: PullRequest[];
     ciStatus: CiStatus;
 }
 
@@ -29,11 +29,11 @@ export interface Workflowrun {
     pull_requests: any[];
     created_at: string;
     updated_at: string;
-    actor: Owner;
+    actor: User;
     run_attempt: number;
     referenced_workflows: any[];
     run_started_at: string;
-    triggering_actor: Owner;
+    triggering_actor: User;
     jobs_url: string;
     logs_url: string;
     check_suite_url: string;
@@ -53,7 +53,7 @@ export interface Repository {
     name: string;
     full_name: string;
     private: boolean;
-    owner: Owner;
+    owner: User;
     html_url: string;
     description: string;
     fork: boolean;
@@ -122,15 +122,15 @@ export interface PullRequest {
     state: string;
     locked: boolean;
     title: string;
-    user: Owner;
+    user: User;
     body: string;
     created_at: string;
     updated_at: string;
     closed_at?: any;
     merged_at?: any;
     merge_commit_sha: string;
-    assignee: Owner;
-    assignees: Owner[];
+    assignee: User;
+    assignees: User[];
     requested_reviewers: any[];
     requested_teams: any[];
     labels: Label[];
@@ -168,7 +168,7 @@ export interface Base {
     label: string;
     ref: string;
     sha: string;
-    user: Owner;
+    user: User;
     repo: Repo2;
 }
 
@@ -178,7 +178,7 @@ export interface Repo2 {
     name: string;
     full_name: string;
     private: boolean;
-    owner: Owner;
+    owner: User;
     html_url: string;
     description: string;
     fork: boolean;
@@ -258,7 +258,7 @@ export interface Head {
     label: string;
     ref: string;
     sha: string;
-    user: Owner;
+    user: User;
     repo: Repo;
 }
 
@@ -268,7 +268,7 @@ export interface Repo {
     name: string;
     full_name: string;
     private: boolean;
-    owner: Owner;
+    owner: User;
     html_url: string;
     description: string;
     fork: boolean;
@@ -360,7 +360,7 @@ export interface RepositoryData {
     name: string;
     full_name: string;
     private: boolean;
-    owner: Owner;
+    owner: User;
     html_url: string;
     description: string;
     fork: boolean;
@@ -435,7 +435,7 @@ export interface RepositoryData {
     watchers: number;
     default_branch: string;
     permissions: Permissions;
-    organization: Owner;
+    organization: User;
     network_count: number;
     subscribers_count: number;
 }
@@ -456,7 +456,7 @@ export interface License {
     node_id: string;
 }
 
-export interface Owner {
+export interface User {
     login: string;
     id: number;
     node_id: string;
