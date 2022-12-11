@@ -1,8 +1,11 @@
 import styled from 'styled-components'
 import { RepositoryCard } from '../../components/RepositoryCard/RepositoryCard';
-import { gitHubApiResponses } from '../../data/githubApiResponses';
+import { InMemoryGithubRepositoryRepository } from '../../infraestructure/InMemoryGithubRepositoryRepository';
 
 const title = 'DevDash_'
+
+const gitHubApiResponses = new InMemoryGithubRepositoryRepository().search();
+
 
 export function Dashboard() {
     return (
